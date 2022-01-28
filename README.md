@@ -1,8 +1,9 @@
-# [Vue - The Complete Guide (incl. Router & Composition API)] (https://www.udemy.com/course/vuejs-2-the-complete-guide/)
+# Vue - The Complete Guide (incl. Router & Composition API) https://www.udemy.com/course/vuejs-2-the-complete-guide/
 
 ## About
 
 I purchased this Vue course from Udemy to effiently learn Vue.js for Frontend Software Engineering. After this course, I will learn to use TypeScript with Vue.js
+All my notes and code with my comments are on my GitHub and my aim to commit my work at least once during my training day to keep my work safe in the cloud and for anyone to view my work and for me to share my work with others.
 
 ### The Purpose
 
