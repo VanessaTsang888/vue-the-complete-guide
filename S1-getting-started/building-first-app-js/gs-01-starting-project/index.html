@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A First App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <label for="goal">Vanessa's Goals for 27-01-2022</label>
+        <!-- Connect the 'entered value' data property with the special input within this HTML file, by adding a special directive (a special HTML attribute) on this input element/tag,
+          the v-model attribute, this will only be understoold by Vue. By pasting the property: enteredValue, this will establish a connection between this input element and the value
+        entered by user, and the data property. Vue will manage this for us, it will auto listen to what the user enters, and update this input element when the enteredValue data property
+      gets changed.   -->
+        <input type="text" id="goal" v-model="enteredValue" />
+        <!-- The addGoal() method will get executed when this button gets click. A special attribute is needed in this button element -->
+        <button v-on:click="addGoal">Add Goal 添加目標</button>
+      </div>
+      <!-- Output our Goals in the unordered list by create list items and one for every Goal  -->
+      <ul>
+        <!-- Create one list item per goal as this is our desired end result. goal is a variable, outpout this using double braces -->
+        <!-- Output one goal per goal entry we have in the goals Array  -->
+        <li v-for="goal in goals">{{ goal }}</li>
+      </ul>
+    </div>
+    <!-- This script will allow me to use Vue.js for small projects -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
