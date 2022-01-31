@@ -1,10 +1,10 @@
 SECTION 01: Getting Started:
 
-1. Welcome:
-   I didn't take any notes for this video as no need.
+L1. Welcome:
+I didn't take any notes for this video as no need.
 
-2. What is Vue:
-   A JS Framework that allows us to provide rich user experiences (UX).
+L2. What is Vue:
+A JS Framework that allows us to provide rich user experiences (UX).
 
 Framework: third party library (code) that exposes certain utility functionalities, methods, tools and a set of rules. So it's the utility functions plus the rules
 
@@ -15,30 +15,30 @@ Vue makes it easy for us to create great UX.
 Its not a server-side framework.
 It feel all one unit. The only thing that is loading behind the scenes is data.
 
-3. Different Ways of Utilising Vue:
-   Use it in 2 main ways. There is no best approach as it is project dependant.
-   -> To control parts of a HTML page and make that more reactive, i.e. sidebar to load elements there dynamically, or a chat overlay that user can open up which is controlled by Vue -> widgets.
-   -> The other way is use Vue to control the entire frontend of a web app -> SPA apps.
+L3. Different Ways of Utilising Vue:
+Use it in 2 main ways. There is no best approach as it is project dependant.
+-> To control parts of a HTML page and make that more reactive, i.e. sidebar to load elements there dynamically, or a chat overlay that user can open up which is controlled by Vue -> widgets.
+-> The other way is use Vue to control the entire frontend of a web app -> SPA apps.
 
-4. Exploring Vue Alternatives:
-   Angular, React.js or Vue.js - Similar concepts so switching is not too difficult.
-   Angular:
-   Complete component-based UI framework, packed with features. Uses TypeScript. Can be overkill for smaller projects.
-   React:
-   Lean, component-based UI library. Certain features (e.g. routing - not included out of the box) are added via community packages.
-   Vue:
-   Complete component-based UI framework, includes most core features. A little less popular than React & Angular.
+L4. Exploring Vue Alternatives:
+Angular, React.js or Vue.js - Similar concepts so switching is not too difficult.
+Angular:
+Complete component-based UI framework, packed with features. Uses TypeScript. Can be overkill for smaller projects.
+React:
+Lean, component-based UI library. Certain features (e.g. routing - not included out of the box) are added via community packages.
+Vue:
+Complete component-based UI framework, includes most core features. A little less popular than React & Angular.
 
-5. Building A First App With Just with JS:
-   Add Goal App without Vue so I can see why using Vue is a good idea.
-   Aim:
-   When click Add Goal, that goal will appear in the list below.
+L5. Building A First App With Just with JS:
+Add Goal App without Vue so I can see why using Vue is a good idea.
+Aim:
+When click Add Goal, that goal will appear in the list below.
 
-   6. I have joined the Academind Community and sent a message to say hello to everyone.
+L6. I have joined the Academind Community and sent a message to say hello to everyone.
 
-   7. Re-building the App with Vue:
-      Add Goals app - part 2:
-      Same as lecture 5 but instead of vanilla Javascript use Vue and understand the benefits.
+L7. Re-building the App with Vue:
+Add Goals app - part 2:
+Same as lecture 5 but instead of vanilla Javascript use Vue and understand the benefits.
 
 To use vue.js for small project -> past the CDN link from the Vue website: https://v3.vuejs.org/guide/installation.html#cdn
 in to my html file, just above the existing script tag/element.
@@ -64,4 +64,35 @@ and execute the fn when a click occurs. With Vue we define the desire end result
    The div with the id of app contains all the mark-p that uses the Vue features, we used the special attributes, so the div with the id app contains all this code. So its this div the Vue app will
    control this app. This is why we use the id selector the hash symbol # inside of the mount().
 
-2:42
+L8: Vue vs Vanilla JavaScript:
+Vue is we follow the declarative approach to development where we define our end result using the special attributes win the HTML elements/tags -> HTML code to connect the HTML to the data and logic managed in the Vue app -> app.js file where we declare the result instead of defining the steps of getting there, allowing us to build large, complex apps with high performance unlike with using Vanilla JS.
+
+L9: Setting Up the Course Dev Enironment:
+I have already installed Prettier and its my default formatter, and other extensions that I need for my environment/ IDE.
+
+L10: Course Outline & What's In The Course:
+Its updated with Vue.js 3. All the below 3 levels come with small demos/mini projects, multiple bigger course projects, assignments, challenges.
+A huge course with tones of conent.
+
+1. Basics - how to use then and how they work together:
+   Core Syntax, Templates, Directives, Data, Methods, Computed Properties, Watchers.
+2. Intermediate: understand its magic:
+   Components, Component Communication, Behind the Scenes, Forms, sending Http requests, how to implement Routing and load different pages in SPA app, Animations.
+
+3. Advanced Concepts:
+   Vuex for state management, Authentication, Deployment & Optimizations, Composition API, Re-using Code.
+
+L11: How To Get The Most Out of This Course:
+Tips & Tricks:
+
+4. Watch the videos: watch in my own past.
+5. Code along with the instructor.
+6. Repeat Concepts or sections if unclear.
+7. Blockers: resources - Google/Stack Overflow.
+8. Q&A Section: ask & answer. Forum for discussions.
+9. Code snapshots for the different lectures in that section (on last lecture of every module/section) -> compare my code with the lectures code.
+   Can use these snapshots to compare my code to yours. Can replace my code with lectures code temporarily, step-by-step, to narrow down the issue, and find out where my code differs, and what might be causing an error.
+
+Module Resources:
+Code snapshots for this module. The file name refers to the specific lecture name to which the snapshot belongs. Also, the slides for all the course modules attached to this lecture.
+I have downloaded all x4 of those files and put them in safe place.
