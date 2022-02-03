@@ -19,7 +19,12 @@
     <!-- Inside this section element is the code that Vue will control, i.e. my course goals that I want to output dynamically in the UI -->
     <section id="user-goal">
       <h2>My Course Goal</h2>
-      <p></p>
+      <!-- The value of the property courseGoal will get rendered/output to the screen/UI -->
+      <!-- Calling/execute the fn that's inside of methods called outputGoals() using the interpolation syntax - can use simple JS expressions like ternary statements but not complex JS code i.e. if-statements -->
+      <p>{{ outputGoal() }}</p>
+      <!-- Binding Attributes with the "v-bind". We need to use the v-bind directive (an instruction we give to Vue to do something) as the link value is dynamic -->
+      <!-- Setting the value of a HTML attribute which is a link hence the property name inside the double quotes -->
+      <p>Learn more <a v-bind:href="vueLink">about Vue</a></p>
     </section>
   </body>
 </html>
