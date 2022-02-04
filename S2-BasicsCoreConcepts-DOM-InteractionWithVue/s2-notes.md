@@ -73,3 +73,34 @@ return this.courseGoalA;
 } else {
 return this.courseGoalB;
 }
+
+L18 Working with Data inside of a Vue App:
+I want to output either the value of courseGoalA property or the value of courseGoalB property. To do this we use a special syntax:
+-> 'this' keyword: return this.courseGoalA
+Vue takes the returned data properties and merges it to the global Object the Vue app Object since they are available. Now when I reload it still works with the help of the outputGoals() method.
+
+L19 Outputting Raw HTML Content with v-html:
+We use the v-html directive to output HTML code rather than some text, i.e.
+-> <p v-html="outputGoal()"></p>
+I shouldn't need it too often but use it if I know what I'm doing as can introduce security issues.
+
+So we either output data with data(); or with methods:
+
+L20 A First Summary:
+Brief sumary of what I've learnt.
+All the features I've learnt is data binding: interpolation, directives syntax using v-bind and v-html.
+We pass an Object to our Vue app, which we create with createApp()
+and the Object data() configures the Vue app
+we can set various options i.e. the data() option or the methods option.
+The data() option take a fn which should return an Object full of data, which will then be available in our Vue controlled HTML code, i.e. the: vueLink value
+and can also be acessed inside of methods using the 'this' keyword. They are fn's that can be called from vue controlled HTML i.e. outputGoal()
+
+Vue uses a Declarative approach - the developer define the goal, we define a template, of the content we want to have. We markup parts which are dynamic: ie. the <section> tag, <p></p> tag etc
+and it outputs values and it updates the real DOM which renders to the screen. So developers just define the final picture with the dynamic placeholders i.e. the directives and we don't define
+all the steps of getting that picture onto the screen. That the Vue framework. Vue uses a Declarative approach as we just declare our goal as we don't care about the steps of getting there.
+
+Assignment 01: Time to Practice: Data Binding:
+
+Use the knowledge you gained in the last lectures to solve the tasks outlined in the video above. Compare your solution to mine (solution video + provided code) thereafter.
+
+I have completed the assignment but the my image is not displaying in the UI properly as it is broken. I've treid other images from the internet still no luck.

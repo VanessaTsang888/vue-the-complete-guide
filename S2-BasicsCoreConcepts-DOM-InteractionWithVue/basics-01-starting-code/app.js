@@ -35,7 +35,7 @@ is called Interpolation. Its the value part of the property that gets rentered: 
 I can use the property: courseGoal to output or render any value i.e. String, Number, Boolean, Array, Object with key-pair-value.
 
 L16 Binding Attributes with the "v-bind":
-v-bind is another Vue's key feature.
+v-bind is another Vue's key feature. To set a value to an attribute i.e. let a link to the href attribute that is in the anchor tag.
 bind means to set something. Use v-bind to set a value on an HTML tag and to an attribute, i.e. on the href attribute within an anchor tag.
 directive is an instruction we give to Vue to do something.
 We don't always want to use Interpolation for outputing data, i.e. we have second paragraph and part of it needs to be a link: <p>Learn more <a hef="">about Vue</a>.</p>
@@ -60,8 +60,25 @@ I want to output either the value of courseGoalA property or the value of course
 -> 'this' keyword: return this.courseGoalA
 Vue takes the returned data properties and merges it to the global Object the Vue app Object since they are available. Now when I reload it still works with the help of the outputGoals() method.
 
+L19 Outputting Raw HTML Content with v-html:
+We use the v-html directive to output HTML code rather than some text, i.e. 
+-> <p v-html="outputGoal()"></p>
+I shouldn't need it too often but use it if I know what I'm doing as can introduce security issues.
 
+So we either output data with data(); or with methods:
 
+L20 A First Summary:
+Brief sumary of what I've learnt.
+All the features I've learnt is data binding: interpolation, directives syntax using v-bind and v-html.
+We pass an Object to our Vue app, which we create with createApp()
+and the Object data() configures the Vue app
+we can set various options i.e. the data() option or the methods option.
+The data() option take a fn which should return an Object full of data, which will then be available in our Vue controlled HTML code, i.e. the: vueLink value 
+and can also be acessed inside of methods using the 'this' keyword. They are fn's that can be called from vue controlled HTML i.e. outputGoal()
+
+Vue uses a Declarative approach - the developer define the goal, we define a template, of the content we want to have. We markup parts which are dynamic: ie. the <section> tag, <p></p> tag etc
+and it outputs values and it updates the real DOM which renders to the screen. So developers just define the final picture with the dynamic placeholders i.e. the directives and we don't define
+all the steps of getting that picture onto the screen. That the Vue framework. Vue uses a Declarative approach as we just declare our goal as we don't care about the steps of getting there.
 
 */
 

@@ -24,6 +24,8 @@
       <p>{{ outputGoal() }}</p>
       <!-- Binding Attributes with the "v-bind". We need to use the v-bind directive (an instruction we give to Vue to do something) as the link value is dynamic -->
       <!-- Setting the value of a HTML attribute which is a link hence the property name inside the double quotes -->
+      <!-- Outputting Raw HTML Content with v-html directive -->
+      <!-- <p v-html="outputGoal()"></p> -->
       <p>Learn more <a v-bind:href="vueLink">about Vue</a></p>
     </section>
   </body>
