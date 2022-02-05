@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <!-- We use the v-on directive to set an event listener on the button tag as we want to react on a certain event and v-on take an argument of click. Lisen out for click event. This code will run when click event occurs.  -->
+      <button v-on:click="counter++">Add</button>
+      <!-- This also works: counter = counter - 1 -->
+      <button v-on:click="counter--">Remove</button>
+      <!-- Output the counter which changes every time the counter changes or the buttons gets pressed -->
+      <!-- This counter is managed in the Vue app/the JS file and output here to display in the UI -->
+      <p>Result: {{ counter }}</p>
+    </section>
+  </body>
+</html>

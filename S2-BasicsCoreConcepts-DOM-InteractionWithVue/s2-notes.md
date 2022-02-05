@@ -104,3 +104,26 @@ Assignment 01: Time to Practice: Data Binding:
 Use the knowledge you gained in the last lectures to solve the tasks outlined in the video above. Compare your solution to mine (solution video + provided code) thereafter.
 
 I have completed the assignment but the my image is not displaying in the UI properly as it is broken. I've treid other images from the internet still no luck.
+
+L20 Understanding Event Binding:
+Events in Vue:
+We need to react to user inputs, events, make dynamic pages. Vue makes developing highly reactive and dynamic, web apps easier.
+How we can listen to user events in Vue:
+
+A counter app with data(); method to return our data, which is a number starting at 0 that mounts to the events <section> in the HTML code/holds all the markup.
+
+To make the Add button work: add an event listener -
+-> to add a click listener we use the: v-on directive
+-> as we want to react on a certain event.
+-> v-on takes an argument of :click
+-> others include: mouseenter, mouseleave etc
+-> specify the code that should run when the code ocurrs, i.e. "counter++" or "counter = counter+"
+-> That means we want to add one to the counter
+-> So inside of the value of the directive we can write simple JS expressions -> our HTML code.
+-> Now when user clicks the Add button the counter called Result will increase by one.
+
+When the counter has changed it reaches out to the paragraph to change the value that's displays on the UI. This is what Vue do behind the scenes for us - core asset of frameworks like Vue.
+We just declare where we want to have the EventListeners, and where we want to output the value (Result: ), and which value we should be aware of. Then Vue do the rest for us incl. adding
+and managing those listeners, updating the counter behind the scense. Also, detecting when the counter changes, and updating the parts of the real rendered page, where updating is needed,
+when the counter changes.
+Not a lot of JS code as Vue is declarative approach so we declare our end result.

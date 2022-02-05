@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Vue Basics - Chinese New Year 2022 - Purchase Your Lucky Tiger Today
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Happy Chinese New Year 2022 <br /><span>新年快樂</span></h1>
+      <h2>Lucky Tigers Now For Sale</h2>
+    </header>
+    <section id="events">
+      <h2>
+        <span><p>£8 each</p></span>
+        How many tigers would you like?
+      </h2>
+      <button v-on:click="counter++">Add</button>
+      <button v-on:click="counter = counter - 1">Remove</button>
+      <p>My Basket: {{ counter }}</p>
+    </section>
+  </body>
+</html>
