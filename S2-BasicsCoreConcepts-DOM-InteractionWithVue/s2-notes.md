@@ -105,7 +105,7 @@ Use the knowledge you gained in the last lectures to solve the tasks outlined in
 
 I have completed the assignment but the my image is not displaying in the UI properly as it is broken. I've treid other images from the internet still no luck.
 
-L20 Understanding Event Binding:
+L21 Understanding Event Binding:
 Events in Vue:
 We need to react to user inputs, events, make dynamic pages. Vue makes developing highly reactive and dynamic, web apps easier.
 How we can listen to user events in Vue:
@@ -127,3 +127,20 @@ We just declare where we want to have the EventListeners, and where we want to o
 and managing those listeners, updating the counter behind the scense. Also, detecting when the counter changes, and updating the parts of the real rendered page, where updating is needed,
 when the counter changes.
 Not a lot of JS code as Vue is declarative approach so we declare our end result.
+
+L22 Events & Methods:
+We've learnt how to listen to events. But we don't want to update our counter in our HTML code as this is not best practice as don't want too much logic in our HTML code. We want to update our counter in our JS code instea.
+We needa special fn called a method that will get called when user clicks the Add and/or the Reduce button.
+Now using methods in our JS to put our logic - best practice. Then just output it in our HTML code or point to it from HTML. We don't have to call the add() fn in our HTML, we can just point to it like this:
+-> <button v-on:click="add">Add</button>
+-> Best practice to keep HTML code leaner and only for outputting logic.
+-> add is the name of the method which is a type of fn.
+-> Vue accepts both, calling the fn: add() and pointing at it: add
+-> so both syntax is allowed.
+
+We use methods to connect them to event listeners and let Vue call them for us a certain event occurs, i.e. when user click the Add button or the Reduce button.
+Example, to increment our counter, we can write a method and call it anything we want i.e. add() or addCounter or increment()
+Inside that method we can update the counter with: this.counter++
+Then similar with writing a method to reduce the counter: this.counter--
+so in our JS code we refer to our data properties with the 'this' keyword
+So we use methods to connect our logic ( i.e. the add() method ) to events ( i.e. v-on:click="add()" ), then output in HTML using interpolation, i.e. {{ counter }} with combination with event listeners: v-on:click="Add"

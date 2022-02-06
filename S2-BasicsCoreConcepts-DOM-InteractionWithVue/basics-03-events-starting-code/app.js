@@ -15,6 +15,10 @@ v-on can listen to all default events i.e. click, mouseenter, mouseleave etc.
 Then Vue to the rest of adding and managing those listeners, updating the counter behind the scenes and detecting when the counter changes, and updating the parts of the real rendered page, where updating is needed, 
 when the counter changes.
 
+L22 Events & Methods:
+Using the 'this' keyword to update our counter within our JS code. Then just call it or point to it in our HTML code. JS will do the calling for us to update the counter when the user clicks the Add or Reduce button.
+So the method will run when a click event occurs.
+
 */
 
 const app = Vue.createApp({
@@ -22,6 +26,15 @@ const app = Vue.createApp({
     return {
       counter: 0,
     };
+  },
+  methods: {
+    add() {
+      // this.counter++;
+      this.counter = this.counter + 1;
+    },
+    reduce() {
+      this.counter--;
+    },
   },
 });
 
