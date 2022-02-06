@@ -19,6 +19,12 @@ L22 Events & Methods:
 Using the 'this' keyword to update our counter within our JS code. Then just call it or point to it in our HTML code. JS will do the calling for us to update the counter when the user clicks the Add or Reduce button.
 So the method will run when a click event occurs.
 
+L23 Working with Event Arguments:
+If we want to add a specific number to our Add button then we need to pass an argument into our method so we need to set this in our JS and can name our parameter: num
+so its dynamic. Then we update our HTML by pass-in the value as the argument we want, i.e. <button v-on:click="add(10)">Add</button>
+
+
+
 */
 
 const app = Vue.createApp({
@@ -28,12 +34,13 @@ const app = Vue.createApp({
     };
   },
   methods: {
-    add() {
+    add(num) {
       // this.counter++;
-      this.counter = this.counter + 1;
+      this.counter = this.counter + num;
     },
-    reduce() {
-      this.counter--;
+    reduce(num) {
+      // this.counter--;
+      this.counter = this.counter - num;
     },
   },
 });

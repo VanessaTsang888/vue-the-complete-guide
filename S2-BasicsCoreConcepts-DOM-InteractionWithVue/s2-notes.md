@@ -144,3 +144,9 @@ Inside that method we can update the counter with: this.counter++
 Then similar with writing a method to reduce the counter: this.counter--
 so in our JS code we refer to our data properties with the 'this' keyword
 So we use methods to connect our logic ( i.e. the add() method ) to events ( i.e. v-on:click="add()" ), then output in HTML using interpolation, i.e. {{ counter }} with combination with event listeners: v-on:click="Add"
+
+L23 Working with Event Arguments:
+What if we want to Add a specific number or reduce a specific number to our Result?
+Passing arguments to methods is possible and its easy to do.
+Sometimes our methods will need to get some parameters which me as a developer want to set. We set it in the JS, call it with a value in the HTML.
+The method should be written in a very generic way as we want this to be dynamic.

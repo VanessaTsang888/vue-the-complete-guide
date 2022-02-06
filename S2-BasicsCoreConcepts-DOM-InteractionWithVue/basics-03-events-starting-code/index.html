@@ -18,12 +18,13 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
+      <!-- Calling ad() method with a value as the argument/parameter -->
       <!-- Calling the method add() -->
       <!-- We use the v-on directive to set an event listener on the button tag as we want to react on a certain event and v-on take an argument of click. Lisen out for click event. This code will run when click event occurs.  -->
-      <button v-on:click="add()">Add</button>
+      <button v-on:click="add(10)">Add 10</button>
       <!-- pointing at the method reduce -->
       <!-- This also works: counter = counter - 1 -->
-      <button v-on:click="reduce">Reduce</button>
+      <button v-on:click="reduce(5)">Subtract 5</button>
       <!-- Output the counter which changes every time the counter changes or the buttons gets pressed -->
       <!-- This counter is managed in the Vue app/the JS file and output here to display in the UI -->
       <p>Result: {{ counter }}</p>
