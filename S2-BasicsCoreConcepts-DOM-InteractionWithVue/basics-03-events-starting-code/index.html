@@ -28,6 +28,10 @@
       <!-- Output the counter which changes every time the counter changes or the buttons gets pressed -->
       <!-- This counter is managed in the Vue app/the JS file and output here to display in the UI -->
       <p>Result: {{ counter }}</p>
+      <!-- Input field for user to type their name. Listen to the input event. Access the built in event as an argument using the dollor symbol. lastName is already set. -->
+      <input type="text" v-on:input="setName($event, 'Tsang')" />
+      <!-- Detects that name changed, output user input from the input field i.e. their name -->
+      <p>Your Name: {{ name }}</p>
     </section>
   </body>
 </html>

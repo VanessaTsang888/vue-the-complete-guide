@@ -23,7 +23,11 @@ L23 Working with Event Arguments:
 If we want to add a specific number to our Add button then we need to pass an argument into our method so we need to set this in our JS and can name our parameter: num
 so its dynamic. Then we update our HTML by pass-in the value as the argument we want, i.e. <button v-on:click="add(10)">Add</button>
 
-
+L24 Using the Native Event Object:
+We want to let user input their name and we want to listen to every keystroke and the best event to listen to on an HTML element is the: input event (a default DOM event) rather than the keyup or keydown.
+The method setName() will take in the user input via the input field as long as we return the name and initialise it with empty String.
+The setName will be called on every keystroke event and this should update the name (our data and it's property within the return Object).
+So as the user types into the input field the paragraph below auto updates -> Vue's reactivity in action.
 
 */
 
@@ -31,9 +35,14 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
+      name: "",
     };
   },
   methods: {
+    setName(event, lastName) {
+      // Listen to the event (user input in the HTML code), execute this code. Then detects the name changed and updates it -> interpolation in the HTML code.
+      this.name = event.target.value + " " + lastName; // value property - we use to read what the user enter in the input field.
+    },
     add(num) {
       // this.counter++;
       this.counter = this.counter + num;

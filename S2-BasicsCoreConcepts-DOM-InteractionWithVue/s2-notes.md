@@ -150,3 +150,18 @@ What if we want to Add a specific number or reduce a specific number to our Resu
 Passing arguments to methods is possible and its easy to do.
 Sometimes our methods will need to get some parameters which me as a developer want to set. We set it in the JS, call it with a value in the HTML.
 The method should be written in a very generic way as we want this to be dynamic.
+
+L24 Using the Native Event Object:
+
+Event -> User input: when user types their name in the input field, we want to output that below the input field.
+The directive we should use is: v-on:input on the input element. By using this directive we are telling Vue to listen to this input event on this input element.
+Then executes the JS code. Then auto detects that name changed - the interpolation in the HTML.
+
+We need a new method to take in the data and we can named the method: setName() since set name is what we want to do. 2:13
+
+Sometimes we need to pass-in the lastName so for that instead of pointing to the method from the HTML, we need to call it and pass-in the surname.
+Then in our method we need to accept it as a parameter: setName(lastName)
+Then update name with what ever then user entered: this.name = event.target.value + lastName;
+Since we removed the event as a parameter we need to pass it into HTML code via the value of setName -> setName($event, 'Tsang')
+The $event is a built-in default to give us access to this built in default event object. Then in our JS code, we can use event as first argument in the method:
+-> setName(event, lastName)
