@@ -165,3 +165,31 @@ Then update name with what ever then user entered: this.name = event.target.valu
 Since we removed the event as a parameter we need to pass it into HTML code via the value of setName -> setName($event, 'Tsang')
 The $event is a built-in default to give us access to this built in default event object. Then in our JS code, we can use event as first argument in the method:
 -> setName(event, lastName)
+
+L25 Explorting Event Modifiers:
+Another feature build in Vue.
+Example of an event modifier: forms -> input element and a Sign Up button. The problem we have by default when we click the button the page will reload as for a form with
+a submit button is to submit the form and send an HTTP request to the server serving this app. We have no server as we are running locally so the browser sends a request to
+our local machine. We don't have code in place to handle this request. With frameworks like Vue we want to prevent this browser default and handle this manually in JS with help of Vue. We want to read the user input there, validate it and send it manually to a backend sever and store it in a DB. So prevent browser default of auto sending it.
+There are 2 ways of doing this. We can listen to the submit event - listen to form elements: v-on submit
+Then in methods, write a new method: submitForm() { }
+Point to this method from the HTML form element: v-on submit"submitForm"
+The submitForm() method will get executed
+Inside of the submitForm() -> show an alert to display submitted.
+THE PROBLEM IS THAT THE PAGE STILL RELOADS AFTER THE Submitted message displays in the UI. So we still loose our data when click the button as the Vue app restarts.
+Therefore, we use the default event Object as parameter in SubmitForm() method in our JS code. We call event.preventDefault() on the method as its built in JS ->
+this tells browser that the form should not be submitted, we don't want the browser default.
+Vue has a nicer way for us:
+Instead of using the event Object, we use the event modifier:
+There are certain event modifiers to connect to events we are listening to, to change that event behavior:
+after the event name add a period then write the modifier: v-on:submit.prevent="submitForm"
+couple of support modifiers: prevent -> will prevent the browser default. There is stop.
+
+To change when the event will occur:
+If we want to react when user right click on the Subtract 5 button, then we add a modifier - set to right after the event name 'click'. This means we only want to react to a right click.
+
+Key modifiers:
+on input elements when listening to keyboard events, i.e. we want to update the internally stored name property but should only be updated when user press Enter key on input element. For
+that we can have another data property: confirmedName which is the actual name we want to output in HTML code. So we need another event name with a event modifer on the name input:
+-> v-on:keyup.enter="confirmInput"
+-> Others modifiers for keyup incl ctrl, shift, page-down, all keyboard keys are possible.

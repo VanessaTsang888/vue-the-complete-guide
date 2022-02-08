@@ -31,14 +31,25 @@ So as the user types into the input field the paragraph below auto updates -> Vu
 
 */
 
+// retun Object with various properties and its value that could be any thing from a Number to a String.
+// Methods Object contains multiple methods and some with arguments(s) - most of the logic will be here not in the HTML code.
+
 const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: "",
+      name: "", // internally stored name
+      confirmedName: "", // will execute when user press Enter key
     };
   },
   methods: {
+    confirmedInput() {
+      this.confirmedName = this.name; // execute only when user press Enter key on name input so display what's in the input field when user press Enter key.
+    },
+    submitForm() {
+      // event.preventDefault(); // form should not be submitted, we don't want the browser default.
+      alert("Submitted");
+    },
     setName(event, lastName) {
       // Listen to the event (user input in the HTML code), execute this code. Then detects the name changed and updates it -> interpolation in the HTML code.
       this.name = event.target.value + " " + lastName; // value property - we use to read what the user enter in the input field.

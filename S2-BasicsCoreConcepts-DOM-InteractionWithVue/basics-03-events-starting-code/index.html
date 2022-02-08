@@ -24,14 +24,24 @@
       <button v-on:click="add(10)">Add 10</button>
       <!-- pointing at the method reduce -->
       <!-- This also works: counter = counter - 1 -->
-      <button v-on:click="reduce(5)">Subtract 5</button>
+      <button v-on:click.right="reduce(5)">Subtract 5</button>
       <!-- Output the counter which changes every time the counter changes or the buttons gets pressed -->
       <!-- This counter is managed in the Vue app/the JS file and output here to display in the UI -->
       <p>Result: {{ counter }}</p>
       <!-- Input field for user to type their name. Listen to the input event. Access the built in event as an argument using the dollor symbol. lastName is already set. -->
-      <input type="text" v-on:input="setName($event, 'Tsang')" />
-      <!-- Detects that name changed, output user input from the input field i.e. their name -->
-      <p>Your Name: {{ name }}</p>
+      <!-- Listen to the enter key being pressed by user. If so, confirmedInput method should be executed. -->
+      <input
+        type="text"
+        v-on:input="setName($event, 'Tsang')"
+        v-on:keyup.enter="confirmedInput"
+      />
+      <!-- Detects that name changed, output user input from the input field i.e. their name. confirmedName should only update when user press Enter key. -->
+      <p>Your Name: {{ confirmedName }}</p>
+      <!-- The 'prevent' event modifier to prevent from the browser from reload which will happy by default when the submit button is clicked  -->
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" />
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
