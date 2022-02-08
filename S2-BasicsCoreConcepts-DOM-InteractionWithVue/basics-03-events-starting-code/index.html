@@ -25,6 +25,9 @@
       <!-- pointing at the method reduce -->
       <!-- This also works: counter = counter - 1 -->
       <button v-on:click.right="reduce(5)">Subtract 5</button>
+      <!-- v-once directive. This tells Vue any dynamic data binding like this interpolation on the p element should only be evaluated once. So if data value changes thereafter, it will not
+be reflected, it will not be updated. Only result green bar will be updated. -->
+      <p v-once>Starting Counter: {{ counter }}</p>
       <!-- Output the counter which changes every time the counter changes or the buttons gets pressed -->
       <!-- This counter is managed in the Vue app/the JS file and output here to display in the UI -->
       <p>Result: {{ counter }}</p>

@@ -193,3 +193,11 @@ on input elements when listening to keyboard events, i.e. we want to update the 
 that we can have another data property: confirmedName which is the actual name we want to output in HTML code. So we need another event name with a event modifer on the name input:
 -> v-on:keyup.enter="confirmInput"
 -> Others modifiers for keyup incl ctrl, shift, page-down, all keyboard keys are possible.
+
+L26 Locking Content with v-once:
+If we ever need to lock an initial value in, i.e. the counter value at 10, then the number on first green bar will not change when user click on the Add 10 button but the second button Result will change.
+A directive that we rarely need: v-once
+If we want our starting counter to start at a number that is not 0, then we need to reflect that in our HTML -> <p> eleement.
+So if we want to preserve the initial state and not reflect any other changes, there is a special directive you can put on to the element where you are using that dynamic value in.
+Thats the v-once directive. This tells Vue any dynamic data binding like this interpolation on the p element should only be evaluated once. So if data value changes thereafter, it will not
+be reflected, it will not be updated.

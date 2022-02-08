@@ -37,7 +37,7 @@ So as the user types into the input field the paragraph below auto updates -> Vu
 const app = Vue.createApp({
   data() {
     return {
-      counter: 0,
+      counter: 10,
       name: "", // internally stored name
       confirmedName: "", // will execute when user press Enter key
     };
