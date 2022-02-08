@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Events</h1>
+    </header>
+    <section id="assignment">
+      <h2>Event Practice</h2>
+      <!-- 1) Show an alert (any text of your choice) when the button is pressed -->
+      <!-- Point at my showAlert method - not a default method as I made-up this name as it made sense to me. -->
+      <button v-on:click="showAlert">Show Alert</button>
+      <hr />
+      <!-- 2) Register the user input on "keydown" and output it in the paragraph (hint: event.target.value helps) -->
+      <!-- Listen to the keydown event - point to a method that should be executed: -->
+      <input type="text" v-on:keydown="saveInput" />
+      <!-- Output the property and its value to the UI -->
+      <p>Your Name: {{ userInput }}</p>
+      <hr />
+      <!-- 3) Repeat 2) but only output the entered value if the ENTER key was pressed -->
+      <!-- I am reusing the previous data returned and the previous method named showAlert -->
+      <!-- Only execute this method when user press the Enter key so listen to the keyup event and use the modifier of enter, point at my confirmInput method -->
+      <input
+        type="text"
+        v-on:keydown="saveInput"
+        v-on:keyup.enter="confirmInput"
+      />
+      <p>Confirm Your Name: {{ confirmedInput }}</p>
+    </section>
+  </body>
+</html>

@@ -201,3 +201,7 @@ If we want our starting counter to start at a number that is not 0, then we need
 So if we want to preserve the initial state and not reflect any other changes, there is a special directive you can put on to the element where you are using that dynamic value in.
 Thats the v-once directive. This tells Vue any dynamic data binding like this interpolation on the p element should only be evaluated once. So if data value changes thereafter, it will not
 be reflected, it will not be updated.
+
+Assignment 2: Time to Practice: Event Binding:
+See directory named: basics-assignment-2-problem
+The interpolation for the first and second output is using the property name from the return Objected not the method name within methods Object.
