@@ -207,6 +207,56 @@ See directory named: basics-assignment-2-problem
 The interpolation for the first and second output is using the property name from the return Objected not the method name within methods Object.
 
 L27 Data Binding + Event Binding = Two-Way Binding:
+The combination of data binding and event handing.
 We are communicating in bothe ways:
 -> v-model="name"
 -> easier to get user input and updating its less code, a pattern and a directive I should keep in mind.
+
+Going back to previous counter app. Now we need a Reset button next to the existing input field. This button needs to reset the user's input or to clear the user's input.
+So first we need a new custom method 'resetInput()' and inside we need to clear this input. Don't use the vanilla JS way to do this as its very hacky/explicit
+JS instructions but use Vue's way. So we use the 'name' data property which is the value we are updating on every key-stroke and output it here in input by setting value
+by setting a value attribute to equal to the name property with help of v-bind:
+When user press the Reset Input button the paragraph 'Your Name:' also reset as the method 'resetInput' uses the name property as well as in the return Object.
+This is a patter we may need in some occasions, we may have inputs where you don't just want to get the value the user entered, but also want to set the value of the input
+so we can reset it with a button. So we can achieve this by listening to the input (v-on:input), also by sending the stored value back into the input by binding the
+value property (v-bind:value="name"). This is a common pattern that I will need. Its so common that Vue has a shortcut for this, a special built-in directive which simplifies this.
+If we bind the value and lisen to the input changes on input, we remove all of that code (value binding and the input event listening) and replace with a new directive the 'v-model'
+directive which wants the data property which is the 'name' property which is now manged by Vue so its updated on the input event and the name properties value is then sent back
+into the input element. So v-model is a shortcut for 'v-bind' value, and 'v-on' input.
+Before:
+v-bind:value="name"
+v-on:input="setName($event, 'Schwarzmüller')"
+After:
+v-model="name"
+
+Test in UI and will get same behaviour as before but with less code. This is the concept of two-way-binding as we are communicating in both directions. We are listening to an event coming out
+of the input element and at sametime we are writing the value back to the input element through its value attribute or through its value property. This makes getting user input and updating it
+much easier as need to write less code by using the v-model="" directive.
+
+L28 Methods used for Data Binding: How It Works:
+
+What We Know (Thus Far):
+
+1. DOM Interatcion: Templates & Data Binding.
+2. Event Handling.
+
+Now learn Advanced Reactivity:
+We learnt methods with events. Now to learn better alternative to methods for certain use cases. Last lecture we did Two-way binding but to do that we had to remove our lastName.
+The way we set our lastName wasn't ideal anyway and this alternative way is better as we can impliment a full name in a different way. First add new method at the top
+(the order of these methods is not important):
+
+-> new method 'outputFullname()'
+-> Not going to use it to bind it to an event but use it to call it from the <p></p> element: Your Name: {{ outputFullname() }}
+-> So I want to get back full name in the paragraph element, so insert inside of the interpolation part of the HTML code.
+-> So we want to return this.name + a blank space + my lastName which is hardcoded as a String.
+-> We need the 'this' keyword as we are refering to the 'name' property in the return Object inside of the data() method.
+
+Since we are using a return here, we can add a if-statement to check if this name is currently empty, then return an empty String so that we only add our lastName if the name is
+NOT empty. Only add lastName if user enter something in the input field i.e. their first name. 3:42
+Now, when user enters their first name, that will output as well as the lastName and when we delete our input all the output will be deleted. This is what we expect.
+There is a better way to do this, as when we change the counter in the UI Vue do something behind the scense -vue tries to find out where on the page/HTML where to update the
+rendered page - the problem is that the outputFullname() will be re-executed by Vue, whenever something changes as Vue can't know what this method does, it dosn't known if the
+counter gets used in there? For that reason Vue will re-execute any method anywhere on this page between curly braces or with v-bind or with the v-HTML, so any non-event bound
+method will be re-executed by Vue, when anything on this screen changes. We know that outputFullname don't use the counter. From a performance perspective, that's not so good.
+We can see this by writing a console.log('Running again...') just below the method name. When we press the Add 10 btn or the Subtrct 5 btn in the console tab we see the Running again...
+message. This is why methods are not the best solution for outputting some dynamically calculated value like this.

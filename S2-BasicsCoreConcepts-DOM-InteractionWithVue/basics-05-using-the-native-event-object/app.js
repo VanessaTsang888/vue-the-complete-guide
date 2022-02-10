@@ -22,6 +22,11 @@ Test in UI and will get same behaviour as before but with less code. This is the
 of the input element and at sametime we are writing the value back to the input element through its value attribute or through its value property. This makes getting user input and updating it
 much easier as need to write less code by using the v-model="" directive.
 
+L28 Methods used for Data Binding: How It Works:
+Now learn Advanced Reactivity:
+
+
+
 */
 
 const app = Vue.createApp({
@@ -32,6 +37,15 @@ const app = Vue.createApp({
     };
   },
   methods: {
+    outputFullname() {
+      // Instead of Two-way binding we can do this to set our lastName and impliment a full name. However, when user uses the counter btn all methods on the page will get executed - not good for performance.
+      console.log("Running again...");
+      if (this.name === "") {
+        // lastName will only be output when user inputs something like their first name.
+        return ""; // return different values based on different values and name.
+      }
+      return this.name + " " + "Tsang"; // We want to output our full name using this new method.
+    },
     setName(event, lastName) {
       this.name = event.target.value; // whatever the user enters with every keystroke in 'name'
     },
