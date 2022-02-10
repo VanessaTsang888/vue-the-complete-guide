@@ -205,3 +205,8 @@ be reflected, it will not be updated.
 Assignment 2: Time to Practice: Event Binding:
 See directory named: basics-assignment-2-problem
 The interpolation for the first and second output is using the property name from the return Objected not the method name within methods Object.
+
+L27 Data Binding + Event Binding = Two-Way Binding:
+We are communicating in bothe ways:
+-> v-model="name"
+-> easier to get user input and updating its less code, a pattern and a directive I should keep in mind.

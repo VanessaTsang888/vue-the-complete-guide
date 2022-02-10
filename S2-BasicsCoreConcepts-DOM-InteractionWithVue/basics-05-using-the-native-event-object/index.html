@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button v-on:click="add(10)">Add 10</button>
+      <button v-on:click="reduce(5)">Subtract 5</button>
+      <p>Result: {{ counter }}</p>
+      <!-- Two-way-binding: we communicate in both directions - We are listening to an event coming out
+of the input element and at sametime we are writing the value back to the input element through its value attribute/through its value property -->
+      <input type="text" v-model="name" />
+      <!-- Listen on for click event and this special attribute needs to equal to the method name of resetInput - point to this method rather than execute it.  -->
+      <!-- This special attribut is triggered when the Reset Input button is pressed. -->
+      <button v-on:click="resetInput">Reset Input</button>
+      <p>Your Name: {{ name }}</p>
+    </section>
+  </body>
+</html>
