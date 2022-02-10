@@ -25,6 +25,13 @@ much easier as need to write less code by using the v-model="" directive.
 L28 Methods used for Data Binding: How It Works:
 Now learn Advanced Reactivity:
 
+L29 Introducing Computed Properties:
+This is the third big configuration option similar to methods but difference is we treat the methods inside the computed property as a property (a variable) as we did in data() method.
+Computed properties only get executed when any of its dependencies changes i.e. the 'name' property. Therefore, if user press one of the counter btn's then the 'fullname' property within
+the computed Object don't get executed or re-calculated and re-valuated meaning better performance. We can test this in the developer tools in the UI.
+So we only want to recalcuate a value when a dependancie has changed and that is when we use Computed Properties. Only use methods when we have events and want to trigger certain methods
+when an event occurs, we still bind events to methods. We don't bind events to computered properties which we only use for outputting something i.e. full name.
+
 
 
 */
@@ -32,9 +39,18 @@ Now learn Advanced Reactivity:
 const app = Vue.createApp({
   data() {
     return {
-      counter: 0,
+      counter: 0, // data property with value of number 0
       name: "",
     };
+  },
+  computed: {
+    fullname() {
+      console.log("Running again...");
+      if (this.name === "") {
+        return "";
+      }
+      return this.name + " " + "Tsang";
+    },
   },
   methods: {
     outputFullname() {
