@@ -42,7 +42,7 @@ const app = Vue.createApp({
       counter: 0, // data property with value of number 0
       name: "",
       lastName: "",
-      fullname: "",
+      // fullname: "",
     };
   },
   // latest value of the watch property is passed-in auto by Vue. Can accept two arguments, new value and old value.
@@ -79,7 +79,7 @@ const app = Vue.createApp({
   computed: {
     fullname() {
       console.log("Running again...");
-      if (this.name === "" || this.lastName === "") {
+      if (this.name === "") {
         return "";
       }
       return this.name + " " + this.lastName; // can reference two dependencies - pointing at name and lastName -> less code compared to watcher config.
@@ -108,6 +108,7 @@ const app = Vue.createApp({
     // document.querySelector('input').value = '';
     resetInput() {
       this.name = "";
+      this.lastName = "";
     },
   },
 });

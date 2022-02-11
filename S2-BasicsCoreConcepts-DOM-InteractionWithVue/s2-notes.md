@@ -288,11 +288,12 @@ configuration of this Vue app.
 The 'name' watcher can take multiple arguments i.e. new value and old value. 4:40
 We use if-statement to ensure fullname is empty if value is empty/if user not entered anything in the input field.
 We need to update the fullname when either the name or lastName changes.
-The problem is watchers is that if we add a lastName to our data() method/config then we need to write a new watcher which is a lot more code compared to the computed alternative. 6:40
-With computed, if we want to use two dependencies, we just reference two dependencies. 7:23
+The problem is watchers is that if we add a lastName to our data() method/config then we need to write a new watcher which is a lot more code compared to the computed alternative.
+With computed, if we want to use two dependencies, we just reference two dependencies.
 A case for using watcher is if we want to watch out for the counter when it exceeds above 50, and if so set counter to 0, using logic like if-statement.
 Another case is HTTP request which we want to send if certain data changes, or timers which you want to set if certain values change.
 If we just want to calculate some output value dynamically, then use computed property.
+I tested and found that the two input fields not working as expected. Prateek from the Q&A of this course advised me that I have a name conflict with 'fullname'. So I watched the video from the start taking note of that conflict and found out that I had to comment out the fullname from the data property and the lastName property with its value from the if-statement that's inside of the computed Object/config.
 
 L31 Methods vs Computed Properties vs Watchers:
 Methods:
@@ -332,3 +333,13 @@ For binding an attribute dynamically: v-bind:value="..." -> shortend to: :value=
 No shorthand for v-model="..."
 
 Assignment 3: Time to Practice Reactivity:
+Completed but I forgot that computed property is for dependancy change -> changed counter to number which become the dependency and when this change (from 0 to greater than 37) then in 5 seconds
+then Vue will change from 'Too much!' to 'Not there yet!'.
+How:
+
+1. write the global Vue app and connect to the HTML.
+2. write the event listener on both btn's.
+3. write the first config which is the data() method at top of the Vue app.
+4. write the methods Object and the method() inside of that.
+5. write the computed property with the 'number' property inside as the dependancy.
+6. watch for the result() computed property, and when user press any of the Add btn's so that the number is greater than 37, then in 5 seconds Vue will change the output to 'Not there yet!' -> less than 37.
