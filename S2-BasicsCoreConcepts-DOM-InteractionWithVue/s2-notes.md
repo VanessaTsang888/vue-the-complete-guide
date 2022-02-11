@@ -260,3 +260,36 @@ counter gets used in there? For that reason Vue will re-execute any method anywh
 method will be re-executed by Vue, when anything on this screen changes. We know that outputFullname don't use the counter. From a performance perspective, that's not so good.
 We can see this by writing a console.log('Running again...') just below the method name. When we press the Add 10 btn or the Subtrct 5 btn in the console tab we see the Running again...
 message. This is why methods are not the best solution for outputting some dynamically calculated value like this.
+
+L29 Introducing Computed Properties:
+Computed Properties are like methods with one important difference, Vue will be aware of their dependencies and only re-execute them if one of them changed.
+Computed is the third big configuration option for the app we created. The first one is data(), the second one is methods, the third one is computed and we can add this anywhere in
+this config object: Vue.createApp({
+here..
+});
+
+We'll add it between data() and methods, but the position don't matter.
+When we add it, it's not an name we can choose as its one of the key options supported by Vue - a default keyword name.
+Computed like methods wants an object. So we pass an Object as a value to computed, then we define a bunch of methods, just like in methods, but these methods will be called and executed differently. So here we add a fullname() method as we going to use this like a data property, not like a method, even though it is a method, we name our computed properties
+as we would name our data properties i.e. counter: 0,
+Inside we want to return a value that eventually should be yielded by that computed property, use the code in the outputFullname() method.
+Now we can use the fullname() in our HTML code -> paragraph as the interpolation, pointing at the method not executing the method so without the parenthesis. So we use it just like
+we use the data properties (like variables) like the counter within the HTML, we don't use them like fn's.
+Now test in UI and will find same behavior but now when check in developer tools and reload, we find that if we change the counter we don't see Running again...
+Before, with a method we did see it Running again...
+So this is what we expect. We only see it when we type in the input field.
+So with computed properties Vue is aware of the dependencies of the computed properties in this cases the 'name' is a dependency and it will cache the computed property value and only
+re-calculate and re-valueate it only if any of its dependencies - the name property changed. Thats the main difference. Its better to use computered properties rather than methods for
+outputting values in most cases.
+
+L30 Working with Watchers:
+We can use a watcher as an alternative to a computed property and example is the 'name' watcher that is connected to the 'name' data property within the data() method which is also one of the
+configuration of this Vue app.
+The 'name' watcher can take multiple arguments i.e. new value and old value. 4:40
+We use if-statement to ensure fullname is empty if value is empty/if user not entered anything in the input field.
+We need to update the fullname when either the name or lastName changes.
+The problem is watchers is that if we add a lastName to our data() method/config then we need to write a new watcher which is a lot more code compared to the computed alternative. 6:40
+With computed, if we want to use two dependencies, we just reference two dependencies. 7:23
+A case for using watcher is if we want to watch out for the counter when it exceeds above 50, and if so set counter to 0, using logic like if-statement.
+Another case is HTTP request which we want to send if certain data changes, or timers which you want to set if certain values change.
+If we just want to calculate some output value dynamically, then use computed property.

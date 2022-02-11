@@ -41,15 +41,46 @@ const app = Vue.createApp({
     return {
       counter: 0, // data property with value of number 0
       name: "",
+      lastName: "",
+      fullname: "",
     };
+  },
+  // latest value of the watch property is passed-in auto by Vue. Can accept two arguments, new value and old value.
+  // name watcher
+  // connect this name data property method to one within the data() method above. Not going to return anything as not going to use this watcher anywhere in HTML to use a return value. Instead we run logic when the name changes.
+  watch: {
+    counter(value) {
+      if (value > 50) {
+        const that = this;
+        setTimeout(function () {
+          that.counter = 0;
+        }, 2000); // after 2 seconds reset the counter
+        this.counter = 0;
+      }
+    },
+    // name(value) {
+    //   // ensure fullname is empty if value is empty
+    //   if (value === "") {
+    //     this.fullname = "";
+    //   } else {
+    //     this.fullname = value + " " + this.lastName; // update fullname
+    //   }
+    // },
+    // lastName(value) {
+    //   if (value === "") {
+    //     this.fullname = "";
+    //   } else {
+    //     this.fullname = this.name + " " + value;
+    //   }
+    // },
   },
   computed: {
     fullname() {
       console.log("Running again...");
-      if (this.name === "") {
+      if (this.name === "" || this.lastName === "") {
         return "";
       }
-      return this.name + " " + "Tsang";
+      return this.name + " " + this.lastName; // can reference two dependencies - pointing at name and lastName -> less code compared to watcher config.
     },
   },
   methods: {
