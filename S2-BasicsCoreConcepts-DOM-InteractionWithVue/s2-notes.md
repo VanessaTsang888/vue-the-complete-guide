@@ -313,3 +313,22 @@ Watch:
 1. Not used directly in template.
 2. Can watch any property incl. computed properties. Allows us to run any code in reaction to some changed data e.g. send Http request etc timer, store something in local storage etc
 3. use for any non-data update we want to make. Out of the 3, this is the lest used.
+
+L32 v-bind and v-on Shorthands:
+
+A shorthand for adding event listeners a bit easier:
+
+Before:
+For listening to a click event: v-on:click
+For listening to an input change: v-bind:input
+After:
+@click
+@input
+
+We can still add modifiers -> .enter and everything we did before.
+If I use it then be consistent with it.
+
+For binding an attribute dynamically: v-bind:value="..." -> shortend to: :value="..."
+No shorthand for v-model="..."
+
+Assignment 3: Time to Practice Reactivity:

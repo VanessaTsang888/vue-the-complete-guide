@@ -72,6 +72,8 @@ const app = Vue.createApp({
     //   } else {
     //     this.fullname = this.name + " " + value;
     //   }
+    // 2) Watch for changes in "result" and reset the value to 0 after 5 seconds
+
     // },
   },
   computed: {

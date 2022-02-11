@@ -18,8 +18,8 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add(10)">Add 10</button>
-      <button v-on:click="reduce(5)">Subtract 5</button>
+      <button @click="add(10)">Add 10</button>
+      <button @click="reduce(5)">Subtract 5</button>
       <p>Result: {{ counter }}</p>
       <!-- Two-way-binding: we communicate in both directions - We are listening to an event coming out
 of the input element and at sametime we are writing the value back to the input element through its value attribute/through its value property -->
@@ -27,7 +27,7 @@ of the input element and at sametime we are writing the value back to the input 
       <input type="text" v-model="lastName" />
       <!-- Listen on for click event and this special attribute needs to equal to the method name of resetInput - point to this method rather than execute it.  -->
       <!-- This special attribut is triggered when the Reset Input button is pressed. -->
-      <button v-on:click="resetInput">Reset Input</button>
+      <button @click="resetInput">Reset Input</button>
       <!-- pointing at the method fullname from the computed property not executing it so not using the parenthesis. This fullname will be connected to the fullname computed property 'fullname()' within JS code. So Vue will execute that for us, check if there is a full name data property, if not will check if there is a computed property with that name, if that's the case it will execute it. -->
       <p>Your Name: {{ fullname }}</p>
     </section>
