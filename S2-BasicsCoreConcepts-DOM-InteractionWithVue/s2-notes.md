@@ -293,3 +293,23 @@ With computed, if we want to use two dependencies, we just reference two depende
 A case for using watcher is if we want to watch out for the counter when it exceeds above 50, and if so set counter to 0, using logic like if-statement.
 Another case is HTTP request which we want to send if certain data changes, or timers which you want to set if certain values change.
 If we just want to calculate some output value dynamically, then use computed property.
+
+L31 Methods vs Computed Properties vs Watchers:
+Methods:
+
+1. Use with event binding OR data binding.
+2. Data binding: Method is executed for every 're-render' cycle of the component.
+3. Use for events or data that really needs to be re-evaluated all the time.
+
+Computed:
+Otherwise, we use computed properties
+
+1. Use with data binding.
+2. Computed properties are only re-evaluated if one of their 'used values' changed.
+3. Use for data that depends on other data.
+
+Watch:
+
+1. Not used directly in template.
+2. Can watch any property incl. computed properties. Allows us to run any code in reaction to some changed data e.g. send Http request etc timer, store something in local storage etc
+3. use for any non-data update we want to make. Out of the 3, this is the lest used.
