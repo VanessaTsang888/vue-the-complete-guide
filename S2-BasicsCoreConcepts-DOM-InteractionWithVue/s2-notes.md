@@ -377,3 +377,25 @@ L36 Dynamic Classes: Array Syntax:
 We can have multiple class attributes, where we have multiple class assignments, we can work with one and pass-in an Array rather than an Object where, and the Object can be one
 of multiple elements, other elements could be demo as a String.
 Multiple dyamic classes to one at the same div by using an Array.
+
+Assignment 4 Dynamic Styling:
+My task 2 is not working as expected and I've compared my code with instructor's code. I'm posted my code on the Q&A for help:
+https://github.com/VanessaTsang888/vue-the-complete-guide/commit/27000008db4196d57fe9d72885ccee3564538900
+
+L37 Module Summary:
+
+1. DOM & Templates:
+   Declarative -> define the end goal instead of the steps that vanilla JS uses.
+   Connect Vue to HTML via the mount() method. Vue then renders the real DOM based on the connected template.
+
+2. Data & Event Bindings:
+   We can use bind data via interpolation {{...}} to output some text or the v-bind ':' directive to bind HTML attribute to some dynamic value -> shorthand is just the colon and some attribut to then bind that attribute to a dynamic value.
+   Listen for events via the v-on directive or the shorthand is: @ -> @click=""
+
+3. Reactivity:
+   To make the above core features even more powerful, we use Vue updates the real DOM for you when bound data changes.
+   Can work with computer properties and watchers to allow us to react to data changes.
+4. Styling:
+   Dynamic styling set with v-bind or :
+   Dynamic CSS class and inline style bindings are supported by Vue.
+   Multiple special syntaxes - object-based, array-based for efficient bindings.

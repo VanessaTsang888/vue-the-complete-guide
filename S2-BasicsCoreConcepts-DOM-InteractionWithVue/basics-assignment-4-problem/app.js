@@ -23,4 +23,4 @@ const app = Vue.createApp({
   },
 });
 
-app.mount("#assignment");
+app.mount("#assignment"); // connect this Vue instance to the HTML code with this mount method
