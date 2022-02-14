@@ -31,9 +31,9 @@
       <!-- For more complex checks, can move logic into a computed property named: boxAClasses()
       Then point to that method name as the value for this v-binding to bind the class - attribute. -->
       <div class="demo" :class="boxAClasses" @click="boxSelected('A')"></div>
+      <!-- Multiple dyamic classes to one at the same div by using an Array. -->
       <div
-        class="demo"
-        :class="{ active: boxBSelected }"
+        :class="[ 'demo', { active: boxBSelected }]"
         @click="boxSelected('B')"
       ></div>
       <div

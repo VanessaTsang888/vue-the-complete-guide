@@ -372,3 +372,8 @@ L35 Classes & Computed Properties:
 It's ok to have class binding in HTML code is but If we have more complex code and need to find out if a class (i.e. active) should be added or not, then we can use computed properties. Then we just create a new computed property and add the class binding logic inside it, using the 'this' keyword since we are inside of our Vue app.
 
 Then in HTML -> v-bind class, it will take-in the value of the computed property name of: boxSelected
+
+L36 Dynamic Classes: Array Syntax:
+We can have multiple class attributes, where we have multiple class assignments, we can work with one and pass-in an Array rather than an Object where, and the Object can be one
+of multiple elements, other elements could be demo as a String.
+Multiple dyamic classes to one at the same div by using an Array.
