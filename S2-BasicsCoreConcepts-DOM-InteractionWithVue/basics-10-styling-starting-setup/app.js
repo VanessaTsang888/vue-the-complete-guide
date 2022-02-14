@@ -23,6 +23,12 @@ const app = Vue.createApp({
       boxCSelected: false,
     };
   },
+  // For more complex check, i.e. if-statement where we want to return different Objects/dynamic classes, not just referring to a true or false Boolean.
+  computed: {
+    boxAClasses() {
+      return { active: this.boxASelected };
+    },
+  },
   methods: {
     boxSelected(box) {
       // parameter of box - an identifier for which box was selected as an input.

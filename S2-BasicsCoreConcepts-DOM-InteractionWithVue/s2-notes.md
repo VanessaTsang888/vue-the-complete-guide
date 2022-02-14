@@ -367,3 +367,8 @@ Keep track of which demo div is selected. Could use boxASelected.
    -> method -> instead of declare box to true we declare as the opposite with the Not opporator: !this.boxASelected;
    -> if box A is true, its now NOT as its assigned to NOT true
    -> Do the same to the other boxes.
+
+L35 Classes & Computed Properties:
+It's ok to have class binding in HTML code is but If we have more complex code and need to find out if a class (i.e. active) should be added or not, then we can use computed properties. Then we just create a new computed property and add the class binding logic inside it, using the 'this' keyword since we are inside of our Vue app.
+
+Then in HTML -> v-bind class, it will take-in the value of the computed property name of: boxSelected

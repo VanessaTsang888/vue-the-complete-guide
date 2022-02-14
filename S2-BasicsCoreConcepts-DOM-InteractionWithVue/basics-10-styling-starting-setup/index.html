@@ -28,11 +28,9 @@
       <!-- Vue has special sytnax for class attribute for binding with v-bind so we can add properties where property names reflect your css classes, and the values of those properties are tue or false result that indicates whether that class should be added.
       So we add demo as the property name and set to true. Add active and set the value of active to boxASelected. So the active class is added to this div if boxASelected is true. Simplify it as we always add the demo class, so remove it and put it in a separate class above  -->
       <!-- To deselect a box we use toggle:  -->
-      <div
-        class="demo"
-        :class="{ active: boxASelected }"
-        @click="boxSelected('A')"
-      ></div>
+      <!-- For more complex checks, can move logic into a computed property named: boxAClasses()
+      Then point to that method name as the value for this v-binding to bind the class - attribute. -->
+      <div class="demo" :class="boxAClasses" @click="boxSelected('A')"></div>
       <div
         class="demo"
         :class="{ active: boxBSelected }"
