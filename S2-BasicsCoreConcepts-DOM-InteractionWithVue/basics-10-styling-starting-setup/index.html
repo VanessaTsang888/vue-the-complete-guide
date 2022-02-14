@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <!-- we can use click listeners on any HTML elments i.e. div's not just on buttons -->
+    <!-- Its the v-bind:style="..." or just colon :style that makes the styling dynamic -->
+    <section id="styling">
+      <!-- Since we are binding styles dynamically, can use the default ternary expression Object syntax for attributes: if box A selected, if so, then set to red, otherwise set to this grey color. -->
+      <div class="demo">
+        :style="{borderColor: boxASelected}" @click="boxASelected('A')"
+      </div>
+      <div class="demo">@click="boxBSelected('B')"</div>
+      <div class="demo">@click="boxCSelected('C')"</div>
+    </section>
+  </body>
+</html>

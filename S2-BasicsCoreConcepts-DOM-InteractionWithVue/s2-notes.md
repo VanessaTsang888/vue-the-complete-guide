@@ -343,3 +343,19 @@ How:
 4. write the methods Object and the method() inside of that.
 5. write the computed property with the 'number' property inside as the dependancy.
 6. watch for the result() computed property, and when user press any of the Add btn's so that the number is greater than 37, then in 5 seconds Vue will change the output to 'Not there yet!' -> less than 37.
+
+L33 Dynamic Styling with Linline Styles: 7mins:
+Dynamically in reaction to something, i.e. a click by user. Change data properties through clicks.
+Example, we want to highlight the div the user has clicked on.
+Keep track of which demo div is selected. Could use boxASelected.
+
+1. Create 3 data properties with 3 different names: boxASelected, boxBSelected, boxCSelected.
+2. Initailly they are all set to false - grey -> boarder-none.
+3. we can use click listeners on any HTML elments i.e. div's not just on buttons
+4. Its the v-bind:style="..." or just colon :style that makes the styling dynamic.
+5. A special Vue feature for styong class is: pass-in an Object to :style="..." -> css property name, i.e. borderColor -> lower cameral case naming convention.
+   Check if box A is selected:
+
+   L34: Adding CSS Classes Dynamically:
+   Inline styles over-rule other styles and often causes problems. In modern wed development and CSS, we dont use inline style often.
+   Therefore, we use css classes dynamically. 0:30
