@@ -357,5 +357,13 @@ Keep track of which demo div is selected. Could use boxASelected.
    Check if box A is selected:
 
    L34: Adding CSS Classes Dynamically:
+   Add dynamic styling and dynamic class in Vue:
    Inline styles over-rule other styles and often causes problems. In modern wed development and CSS, we dont use inline style often.
-   Therefore, we use css classes dynamically. 0:30
+   Therefore, we use css classes dynamically.
+   Vue has special sytnax for class attribute for binding with v-bind so we can add properties where property names reflect your css classes, and the values of those properties are tue or false result that indicates whether that class should be added.
+   So we add demo as the property name and set to true. Add active and set the value of active to boxASelected. So the active class is added to this div if boxASelected is true. Simplify it as we always add the demo class, so remove it and put it in a separate class above.
+   To deselect a box we use toggle -> set as inactive :
+   To allow users to toggle/deselect and not just mark box active:
+   -> method -> instead of declare box to true we declare as the opposite with the Not opporator: !this.boxASelected;
+   -> if box A is true, its now NOT as its assigned to NOT true
+   -> Do the same to the other boxes.

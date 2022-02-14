@@ -20,11 +20,29 @@
     <!-- Its the v-bind:style="..." or just colon :style that makes the styling dynamic -->
     <section id="styling">
       <!-- Since we are binding styles dynamically, can use the default ternary expression Object syntax for attributes: if box A selected, if so, then set to red, otherwise set to this grey color. -->
-      <div class="demo">
-        :style="{borderColor: boxASelected}" @click="boxASelected('A')"
-      </div>
-      <div class="demo">@click="boxBSelected('B')"</div>
-      <div class="demo">@click="boxCSelected('C')"</div>
+      <!--       <div
+        :class="boxASelected ? 'demo active' : 'demo'"
+        @click="boxSelected('A')"
+      ></div> -->
+      <!-- Bind css classes dynamically. Add class of active if box A is true.  -->
+      <!-- Vue has special sytnax for class attribute for binding with v-bind so we can add properties where property names reflect your css classes, and the values of those properties are tue or false result that indicates whether that class should be added.
+      So we add demo as the property name and set to true. Add active and set the value of active to boxASelected. So the active class is added to this div if boxASelected is true. Simplify it as we always add the demo class, so remove it and put it in a separate class above  -->
+      <!-- To deselect a box we use toggle:  -->
+      <div
+        class="demo"
+        :class="{ active: boxASelected }"
+        @click="boxSelected('A')"
+      ></div>
+      <div
+        class="demo"
+        :class="{ active: boxBSelected }"
+        @click="boxSelected('B')"
+      ></div>
+      <div
+        class="demo"
+        :class="{ active: boxCSelected }"
+        @click="boxSelected('C')"
+      ></div>
     </section>
   </body>
 </html>

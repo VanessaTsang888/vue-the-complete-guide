@@ -27,11 +27,11 @@ const app = Vue.createApp({
     boxSelected(box) {
       // parameter of box - an identifier for which box was selected as an input.
       if (box === "A") {
-        this.boxASelected = true;
+        this.boxASelected = !this.boxASelected; // To set box as inactive: if box A is true, its now NOT as its assigned to NOT true
       } else if (box === "B") {
-        this.boxBSelected = true;
+        this.boxBSelected = !this.boxBSelected;
       } else if (box === "C") {
-        this.boxCSelected = true;
+        this.boxCSelected = !this.boxCSelected;
       }
     },
   },
