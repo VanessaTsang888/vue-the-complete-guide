@@ -18,9 +18,14 @@
     </header>
     <section id="user-goals">
       <h2>My course goals</h2>
-      <input type="text" />
-      <button>Add Goal</button>
-      <p>No goals have been added yet - please start adding some!</p>
+      <!-- bind user input with v-model  -->
+      <input type="text" v-model="enteredGoalValue" />
+      <!-- Refer to our method  -->
+      <button @click="addGoal">Add Goal</button>
+      <!-- Check if goals is 0 or empty. If is 0 then display this message. -->
+      <p v-if="goals.length === 0">
+        No goals have been added yet - please start adding some!
+      </p>
       <ul>
         <li>Goal</li>
       </ul>

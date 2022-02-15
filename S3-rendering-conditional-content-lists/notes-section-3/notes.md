@@ -17,3 +17,13 @@ Dummy goal: no way of outputting actual goals at the moment.
 
 If we do have goals, we want to render in the <ul> HTML code, we don't want to show the message/paragraph. So we need conditional rendering.
 In the next lecture, Let see how we can render content conditionally with Vue.
+
+L41 Rendering Content Conditionally:
+Vue has a directive that should be redered conditionally and that is the: v-if directive, similar to the if-statement in JS. 1:11
+Conditional rendering with v-if=""
+To consume user's input/their goals, we need to write a method in our JS code.
+If no goals we show the paragraph message, if we do have goals we show the unordered list.
+Test: refresh browser and we see the message. Then we type in our goal and the message disappears. We don't see the goal yet as this is what we expect at the moment as we not learnt how to output
+the goal value yet but we see the conditional rendering with v-if works.
+
+L42 v-if, v-else and v-else-if:
