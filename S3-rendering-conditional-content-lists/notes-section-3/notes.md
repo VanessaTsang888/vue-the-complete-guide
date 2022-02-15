@@ -49,3 +49,13 @@ v-if -> removes and adds elements from and to the DOM sp impacts which elements 
 Which is better? v-show is better for performance but will have bunch of elements in the DOM - not ideal. So show use v-if but if we have an element that it's visability changes a lot then use v-show, i.e. like button that toggles an element, switching between visibility and being hidden all the time, then consider v-show. Other cases use v-if.
 
 Due to tight deadline, I've watched video and taken notes.
+
+L44 Rendering Lists of Data:
+v-if is great for showing content conditionally.
+We have an Array and We will have multiple goals and need to output those goals that we store in our Vue app instead of the dummy Goal. So we need to output a list of content.
+Lists are common in web apps -> working with list of data and outputting repeated content.
+To repeat the list for different Goal we use a directive: v-for
+-> similar to for-loop in JS.
+-> will help us output content that is repeated.
+Test in the UI: Now user can add a new goal and click button to output it.
+Vue only re-renders what needs to be re-render - good for performance.
