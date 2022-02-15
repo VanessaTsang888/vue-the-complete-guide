@@ -27,3 +27,15 @@ Test: refresh browser and we see the message. Then we type in our goal and the m
 the goal value yet but we see the conditional rendering with v-if works.
 
 L42 v-if, v-else and v-else-if:
+Showing content conditionally.
+v-if="..."
+can have any JS expression here that will evaluate to true or false. Can also combine condition with AND or OR -> && / ||
+Can also execute a method here as long as that method returns a true or false value.
+
+Not only we want to show the paragraph condionally but also the list conditionally - only if we do have a goals. So check if goals is greater than 0 the .length on the goals Array. And only if it is > 0 then we show the list <ul><li>
+Testing on UI: So when user add a goal then the paragraph disappears, and we see the list with the dummy Goal text initially.
+
+v-else:
+Needs to be used on direct neighour element of the element which has v-if.
+For multiple possible conditions, we use the v-else-if condition. In case those are not mapped then the fall-back we would use: v-else for the end claws.
+It is about attaching and de-attching from the DOM.

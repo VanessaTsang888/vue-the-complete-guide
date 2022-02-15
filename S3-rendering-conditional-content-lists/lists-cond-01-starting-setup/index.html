@@ -22,13 +22,15 @@
       <input type="text" v-model="enteredGoalValue" />
       <!-- Refer to our method  -->
       <button @click="addGoal">Add Goal</button>
-      <!-- Check if goals is 0 or empty. If is 0 then display this message. -->
+      <!-- Check if goals is 0 or empty. If is 0 then display this message. This directive attribute works like if-statement in JS -->
       <p v-if="goals.length === 0">
         No goals have been added yet - please start adding some!
       </p>
-      <ul>
+      <ul v-else-if="goals.length > 0">
         <li>Goal</li>
       </ul>
+      <!-- Fall-back in case non of the above is true -->
+      <p v-else>...</p>
     </section>
   </body>
 </html>
