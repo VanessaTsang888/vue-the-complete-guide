@@ -29,8 +29,21 @@
       <ul v-else-if="goals.length > 0">
         <!-- inside of li we execute a JS expression. Point at goals - the data property that holds goals Aray. Go through each goal and output them -->
         <!-- Repeat all list items for all goals in goal. The interpolation is the string text the user enters in the input field -->
-        <li v-for="goal in goals">{{ goal }}</li>
+        <!-- Get the index in the Array using perenthesis: index the goal data property -->
+        <li v-for="(goal, index) in goals">{{ goal }} - {{ index }}</li>
       </ul>
+      <!--  v-for can be used on Objects as well but this is not common in web apps.
+        retrieve the value, key and index
+      <ul>
+        <li v-for="(value, key, index) in { name: 'Vanessa', age: 43}">
+          {{ key }}: {{ value }} - {{ index }}
+        </li>
+      </ul>
+      -->
+      <!-- v-for to loop through numbers: -->
+      <!--  
+      <li v-for="num in 10">{{ num }}</li>
+      -->
       <!-- Fall-back in case non of the above is true -->
       <p v-else>...</p>
     </section>

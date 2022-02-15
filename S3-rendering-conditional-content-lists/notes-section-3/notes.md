@@ -59,3 +59,22 @@ To repeat the list for different Goal we use a directive: v-for
 -> will help us output content that is repeated.
 Test in the UI: Now user can add a new goal and click button to output it.
 Vue only re-renders what needs to be re-render - good for performance.
+
+L45 Diving Deeper Into v-for:
+We can also get the index in the Array.
+Just put what ever I'm pullout each interation in perenthesis, i.e. the goal data() property.
+Get the index whilst looping through the goals.
+
+<li v-for="(goal, index) in goals">{{ goal }} - {{ index }}</li>
+
+We can also loop through Objects:
+
+<li v-for="value in { name: 'Vanessa', age: 43}">{{ value }}</li>
+or
+<li v-for="value in { name: 'Vanessa', age: 43}">{{ key }}: {{ value }} - {{ index }}</li>
+
+but we most often loop through Arrays.
+
+With v-for we can loop through a range of numbers:
+and output numbers ->
+-> <li v-for="num in 10"></li>
