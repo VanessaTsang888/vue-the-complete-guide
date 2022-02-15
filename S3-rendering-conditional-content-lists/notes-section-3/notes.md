@@ -78,3 +78,17 @@ but we most often loop through Arrays.
 With v-for we can loop through a range of numbers:
 and output numbers ->
 -> <li v-for="num in 10"></li>
+
+L46 Removing List Items:
+HTML code:
+Using the click listener to remove a goal from the goals Array. We retrive index to remove a gaol hence the perenthises with index inside.
+
+<li v-for="(goal, index) in goals" @click="removeGoal(index)">
+
+JS code:
+// Remove a goal at this index
+// using the splice() method to find the element at this index and remove it from the goals array.
+
+    removeGoal(inx) {
+      this.goals.splice(inx, 1);
+    },

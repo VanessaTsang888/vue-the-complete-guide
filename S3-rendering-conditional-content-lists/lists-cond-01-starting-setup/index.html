@@ -30,7 +30,10 @@
         <!-- inside of li we execute a JS expression. Point at goals - the data property that holds goals Aray. Go through each goal and output them -->
         <!-- Repeat all list items for all goals in goal. The interpolation is the string text the user enters in the input field -->
         <!-- Get the index in the Array using perenthesis: index the goal data property -->
-        <li v-for="(goal, index) in goals">{{ goal }} - {{ index }}</li>
+        <!-- using the click listener to remove a goal from the goals Array. We retrive index to remove a gaol hence the perenthises with index inside -->
+        <li v-for="(goal, index) in goals" @click="removeGoal(index)">
+          {{ goal }} - {{ index }}
+        </li>
       </ul>
       <!--  v-for can be used on Objects as well but this is not common in web apps.
         retrieve the value, key and index
