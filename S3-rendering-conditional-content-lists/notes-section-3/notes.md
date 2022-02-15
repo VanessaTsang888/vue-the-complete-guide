@@ -39,3 +39,13 @@ v-else:
 Needs to be used on direct neighour element of the element which has v-if.
 For multiple possible conditions, we use the v-else-if condition. In case those are not mapped then the fall-back we would use: v-else for the end claws.
 It is about attaching and de-attching from the DOM.
+
+L43 Using v-show Instead Of v-if:
+Directives attributes: An alternative to v-if, is v-show
+This only works stand-a-lone not with v-else-if etc. So if we have multiple alternatives then we need to use multiple v-show's
+Why would be use v-show -> its behaviour - it works in a different way:
+v-show -> its display style is set to none -> hides and show items with CSS.
+v-if -> removes and adds elements from and to the DOM sp impacts which elements are part of the DOM.
+Which is better? v-show is better for performance but will have bunch of elements in the DOM - not ideal. So show use v-if but if we have an element that it's visability changes a lot then use v-show, i.e. like button that toggles an element, switching between visibility and being hidden all the time, then consider v-show. Other cases use v-if.
+
+Due to tight deadline, I've watched video and taken notes.
