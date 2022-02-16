@@ -114,3 +114,22 @@ Assignment 5: Conditional Content & Lists;
 Lists and conditional content:
 I struggled with task 3 -> This related to conditional rendering. We use this to show or hide a task.
 Bonus: to update the text/String of btn.
+
+L48 Module Summary:
+Conditional Content:
+v-if (and v-show) allows you to render content only if a certain condition is met.
+v-if can be combeined with v-else and v-else-if but only on direct sibling elements.
+
+v-for Variations:
+On Objects. You can extract values, values and indexes or values, keys and indexes.
+If you need v-for and v-if, DON'T use them on the same element. Use a wrapper with v-if instead.
+
+Lists:
+v-for can be used to render multiple elements dynamically.
+v-for can be used with Arrays, Objects and ranges - numbers.
+
+Keys:
+Vue re-uses DOM elements to optimise performance -> This can lead to bugs if elements contain state.
+Bind the key attribute to a unique value to help vue identify elements that belong to list content.
+
+Van: When our state need to move together with the content/the user's input value, we need to use the 'key' directive and pass-in a unique critia or bind them to unique values, so Vue can identify every element in an unique way i.e. the task or the goal.
