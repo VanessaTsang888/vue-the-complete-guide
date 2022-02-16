@@ -97,10 +97,20 @@ L47 Lists & Keys:
 This important edition to v-for need to aware of as may see strange bugs if not aware of it. 0:15
 
 The Bug:
+Vue re-uses DOM elements and in most cases this is great but not for certain parts in our Course Goal app.
+The Solution:
+Using the directive of the Vue special attribute of 'key' to resolve the bug: v-bind:key="..." or just :key="..."
+Its value will be the user's goal value/text.
+More Info:
 Example: we have a paragraph below our <li> and a <input /> below that. In the UI we add x2 goals then we delete the second goal but we loose the input value on that when we delete the first goal which is bug. This is because Vue updates the list when we add and remove items, it renders the list in the real DOM and updates it as required and it do that to opitimise performance but also means it reuses DOM elements. So when we have two goals/two DOM elements and I delete the first one, it takes the content of the second element and moves it into the first DOM element. This why if we delete the first DOM element, the input on the second DOM element will be lost as the first DOM element is not actually removed, instead the content (dynamic content - {{ goal }} - {{ index }}) of the second one is moved into the first DOM element. So now the input of the first DOM element is still the old one we've deleted as the entire list item is still the old first element. Just the dynamic content was moved around and thats why we loose the input we had on the second element when the content of the second element moves to the old first elements DOM element.
 Bug as Vue reuses elements which generally is good but sometimes it needs to tell elements apart. The issue is that they all have the same <li> elements/same DOM element, isn't a unique identification criteria for every rendered DOM element. Yes the conent is different.
-The solution:
+The Solution In Detail:
 The is an extra special attribute which we add on elements which we also use on v-for and this is the 'key' attribute. Use this on all items when using v-for attribute. The 'key', we need to bind it with v-bind -> :key is the shorthand. For its value we need something that uniquely identifies every goal, the index is not attached to the element value in the Array so we can't use that as the ID. Could use ID we already have in our database. So getting such a unique key per list item isn't too difficult but here we'll use user's goal value/text. Now, Vue can tell the different DOM elements apart.
 One vital take away is add a key attribute with a unique id criteria when we using v-for directive to help Vue tell the different elements apart and help with performance optimisation.
 
-Performance issues if we don't fix it properly.
+We'll get Performance issues if we don't fix it properly.
+
+Assignment 5: Conditional Content & Lists;
+Lists and conditional content:
+I struggled with task 3 -> This related to conditional rendering. We use this to show or hide a task.
+Bonus: to update the text/String of btn.
