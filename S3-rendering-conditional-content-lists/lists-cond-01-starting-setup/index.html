@@ -31,8 +31,14 @@
         <!-- Repeat all list items for all goals in goal. The interpolation is the string text the user enters in the input field -->
         <!-- Get the index in the Array using perenthesis: index the goal data property -->
         <!-- using the click listener to remove a goal from the goals Array. We retrive index to remove a gaol hence the perenthises with index inside -->
-        <li v-for="(goal, index) in goals" @click="removeGoal(index)">
-          {{ goal }} - {{ index }}
+        <!-- the key attribute with the goal text as its value is to fix the bug of Vue reusing DOM elements when we are using same li element and nest <p> and <input> elements. Sometimes we don't want Vue to reuse DOM elements. -->
+        <li
+          v-for="(goal, index) in goals"
+          key="gaol"
+          @click="removeGoal(index)"
+        >
+          <p>{{ goal }} - {{ index }}</p>
+          <input type="text" @click.stop />
         </li>
       </ul>
       <!--  v-for can be used on Objects as well but this is not common in web apps.
