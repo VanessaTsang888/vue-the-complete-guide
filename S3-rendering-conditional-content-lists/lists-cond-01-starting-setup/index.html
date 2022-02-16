@@ -34,7 +34,7 @@
         <!-- the key attribute with the goal text as its value is to fix the bug of Vue reusing DOM elements when we are using same li element and nest <p> and <input> elements. Sometimes we don't want Vue to reuse DOM elements. -->
         <li
           v-for="(goal, index) in goals"
-          key="gaol"
+          :key="goal"
           @click="removeGoal(index)"
         >
           <p>{{ goal }} - {{ index }}</p>
