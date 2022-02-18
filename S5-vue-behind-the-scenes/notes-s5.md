@@ -71,4 +71,5 @@ Vue instance lifecycle - hooks:
 7. beforeUpdate()
 8. updated() -> the update is rendered on screen.
 
-L67 Vue App Lifecycle - Practice;
+L67 Vue App Lifecycle - Practice:
+My work is in the code files.
