@@ -2,35 +2,47 @@
   <section>
     <header><h1>My Friends</h1></header>
     <ul>
-      <friend-contact></friend-contact>
-      <friend-contact></friend-contact>
+      <!-- Custom HTML attribute - props -->
+      <friend-contact
+        name="Vanessa Tsang"
+        phone-number="07867 840561"
+        email-address="tai.v.tsang@gmail.com"
+        is-favorite="1"
+      ></friend-contact>
+      <friend-contact
+        name="Julie Jones"
+        phone-number="0987 65431"
+        email-address="julie@gamil.com"
+        is-favorite="0"
+      ></friend-contact>
     </ul>
   </section>
 </template>
 
 <script>
-import FriendContact from "./components/FriendContact.vue";
-export default {
-  components: { FriendContact },
-  data() {
-    return {
-      friends: [
-        {
-          id: "manuel",
-          name: "Manuel Lorenz",
-          phone: "0123 45678 90",
-          email: "manuel@localhost.com",
-        },
-        {
-          id: "julie",
-          name: "Julie Jones",
-          phone: "0987 654421 21",
-          email: "julie@localhost.com",
-        },
-      ],
-    };
-  },
-};
+// import FriendContact from "./components/FriendContact.vue";
+// export default {
+//   components: { FriendContact },
+//   data() {
+//     return {
+//       friends: [
+//         {
+//           id: "manuel",
+//           name: "Manuel Lorenz",
+//           phone: "0123 45678 90",
+//           email: "manuel@localhost.com",
+//         },
+//         {
+//           id: "julie",
+//           name: "Julie Jones",
+//           phone: "0987 654421 21",
+//           email: "julie@localhost.com",
+//         },
+//       ],
+//     };
+//   },
+// };
+//
 </script>
 
 <style>
