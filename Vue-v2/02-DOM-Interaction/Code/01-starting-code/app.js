@@ -1,8 +1,15 @@
 // Put this in the script section in JSFiddle
 // In a local setup, you need to merge this and the index.html file into one file
 new Vue({
-	el: '#app',
-	data: {
-		title: 'Hello World!'
-	}
-})
+  el: "#app",
+  data: {
+    title: "Hello World!",
+    link: "http://google.com",
+  },
+  methods: {
+    sayHello: function () {
+      this.title = "Hello";
+      return this.title;
+    },
+  },
+});

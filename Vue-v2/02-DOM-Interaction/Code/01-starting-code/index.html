@@ -1,7 +1,15 @@
-
 <!-- Put this in the HTML section in JSFiddle! -->
+
+<!-- 
+DOM interaction 07: only rendering once with v-once:
+Use v-once directive on an html element to preserve the initial value of an property (or function or whatever we want) even if that value changes in the future.
+Example, in JS code we try to change the value of the title property from Hello World! to Hello within the method named sayHello() but since we used the v-once directive we find that the update or change has not worked which is what we expect.
+
+-->
+
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
-	<p>{{ title }}</p>
+  <h1 v-once>{{ title }}</h1>
+  <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
 </div>
