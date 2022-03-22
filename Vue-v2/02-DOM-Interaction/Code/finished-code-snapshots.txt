@@ -1,0 +1,3 @@
+Conditionals (v-if and v-show): https://jsfiddle.net/smax/hoc719j5/
+
+Lists: https://jsfiddle.net/smax/o7uy2g0u/
