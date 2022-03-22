@@ -87,4 +87,4 @@ v-bind tell Vue -> bind something to my data which is stored in the Vue instance
 DOM interaction 07: only rendering once with v-once:
 
 v-once directive adding on an html element keeps the initial value (i.e. the value in the title property) and will not be updated if it changes later on.
-Example, if later in a method we change the title property from Hello World! to Hello, then this will NOT work as this directive keeps the initial value and not adjust once over-written. In our future app, we may need this behaviour and v-once makes it easy to stick to the initial value and not use any other value this property may take in a later point of time.
+Example, if later in a method we change the title property from Hello World! to Hello, then this will NOT work as this directive keeps the initial value and not adjust once over-written. In our future app, we may need this behaviour and v-once makes it easy to stick to the initial value and not use any other value this property may take in a later point of time. See my 01 Starting Code files for my example of only rendering once with v-once directive.
