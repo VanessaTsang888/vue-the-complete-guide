@@ -84,7 +84,7 @@ DOM Interaction 06: understanding directives:
 An instruction we place in our code. There are not many built-in directives. We can write our own directives or custom directives.
 v-bind tell Vue -> bind something to my data which is stored in the Vue instance. To pass an argument to directive by using a colon then the argument we want to pass, and the argument it do expects is the attribute you want to bind, .i.e href of the link. Then between the quotes the property, or function or what ever we want, the link property from the Vue instance in this case. This allows us to pass dynamic data to html attributes.
 
-DOM interaction 07: only rendering once with v-once:
+DOM Interaction 07: only rendering once with v-once:
 
 v-once directive adding on an html element keeps the initial value (i.e. the value in the title property) and will not be updated if it changes later on.
 Example, if later in a method we change the title property from Hello World! to Hello, then this will NOT work as this directive keeps the initial value and not adjust once over-written. In our future app, we may need this behaviour and v-once makes it easy to stick to the initial value and not use any other value this property may take in a later point of time. See my 01 Starting Code files for my example of only rendering once with v-once directive.
