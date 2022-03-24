@@ -21,5 +21,8 @@ We may want to access the mousemove event info to output the coordinates. For th
   <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
   <button v-on:click="increase(2, $event)">Click Me</button>
   <p>{{ counter }}</p>
-  <p v-on:mouseove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+  <p v-on:mouseove="updateCoordinates">
+    Coordinates: {{ x }} / {{ y }} -
+    <span v-on:mousemove.stop="">DEAD SPOT</span>
+  </p>
 </div>

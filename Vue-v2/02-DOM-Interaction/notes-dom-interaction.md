@@ -133,3 +133,24 @@ increase: function(step, event) {
 this.counter += step;
 }
 }
+
+DOM Interaction 12: Event Modifiers:
+
+  <p v-on:mouseove="updateCoordinates">
+    Coordinates: {{ x }} / {{ y }}
+  - <span v-on:mousemove="dummy">DEAD SPOT</span>
+  </p>
+
+Javascript code:
+Only handle the element here in this handler, dont let it propagate up to any other elements which may hold this element.
+dummy: function(event) {
+event.stopPropagation();
+},
+
+Or we can do better and use an Event Modifier:
+Allows us to modify the behaviour of an event: add a period after the -> v-on:mousemove -> then an argument of: stop
+
+-> - <span v-on:mousemove.stop="">DEAD SPOT</span>
+-> no need to write a method or execute a function as Vue do this for us.
+
+The second most important modifier is: prevent for running prevent default. Modifers can be chained too: .stop.prevent

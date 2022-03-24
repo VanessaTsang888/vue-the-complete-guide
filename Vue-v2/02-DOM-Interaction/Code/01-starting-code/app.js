@@ -32,5 +32,8 @@ new Vue({
       this.x = event.clientX; // clientX is the default properties name of the event object.
       this.y = event.clientY;
     },
+    dummy: function (event) {
+      event.stopPropagation();
+    },
   },
 });
