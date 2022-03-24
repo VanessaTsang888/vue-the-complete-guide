@@ -5,6 +5,10 @@ DOM interaction 07: only rendering once with v-once:
 Use v-once directive on an html element to preserve the initial value of an property (or function or whatever we want) even if that value changes in the future.
 Example, in JS code we try to change the value of the title property from Hello World! to Hello within the method named sayHello() but since we used the v-once directive we find that the update or change has not worked which is what we expect.
 
+10. The deault event object:
+We may want to access the mousemove event info to output the coordinates. For this we write a method named: updateCoordinates, and output the data in the Template/html code.
+ 
+
 -->
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -14,4 +18,5 @@ Example, in JS code we try to change the value of the title property from Hello 
   <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
   <button v-on:click="increase">Click Me</button>
   <p>{{ counter }}</p>
+  <p v-on:mouseove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
 </div>

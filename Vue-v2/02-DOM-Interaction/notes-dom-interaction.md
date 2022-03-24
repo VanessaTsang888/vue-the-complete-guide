@@ -101,3 +101,22 @@ v-bind allows us to bind somthing in our Template to pass data to it, then
 v-on directive we listen to something to receive something to our Template, and we want to receive an Event. v-on take an argument and the name of the argument is the name of the Event we want to listen to, i.e. click.
 but can use any DOM Event for a button i.e. mouse-enter, mouse-leave, whatever DOM Events are on a button. Then pass an value the code we want to execute when button is clicked, i.e. a function -> increase.
 Now, when we click the button on the screen the counter will increase by each click.
+
+DOM interaction: 10 Using The Event Object:
+We can listen to the default events object created by JS DOM which holds info, i.e. for click event it holds info of where the click happend. We want to access this info as we need to output the data. When user hover over the coordinates on the screen they update.
+
+HTML code:
+
+<p v-on:mouseove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+
+JS code:
+data: {
+x: 0,
+y: 0
+},
+medthods: {
+updateCoordinates: function(event) {
+this.x = event.clientX;
+this.y = event.clientY;
+}
+}
