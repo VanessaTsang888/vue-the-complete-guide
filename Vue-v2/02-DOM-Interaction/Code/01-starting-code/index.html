@@ -7,7 +7,10 @@ Example, in JS code we try to change the value of the title property from Hello 
 
 10. The deault event object:
 We may want to access the mousemove event info to output the coordinates. For this we write a method named: updateCoordinates, and output the data in the Template/html code.
- 
+
+11: event custom args:
+  <button v-on:click="increase(2, $event)">Click Me</button>
+
 
 -->
 
@@ -16,7 +19,7 @@ We may want to access the mousemove event info to output the coordinates. For th
 <div id="app">
   <h1 v-once>{{ title }}</h1>
   <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
-  <button v-on:click="increase">Click Me</button>
+  <button v-on:click="increase(2, $event)">Click Me</button>
   <p>{{ counter }}</p>
   <p v-on:mouseove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
 </div>

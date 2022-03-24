@@ -120,3 +120,16 @@ this.x = event.clientX;
 this.y = event.clientY;
 }
 }
+
+DOM interaction 11: event custom args:
+We can pass are own arguments.
+We can pass both our own arguement and a defeault event object. Just us a comma, then our second arg but the naming is important here, this is a protected name: $event
+
+Increase counter by 2:
+<button v-on:click="increase(2, $event)">Click Me</button>
+
+method: {
+increase: function(step, event) {
+this.counter += step;
+}
+}

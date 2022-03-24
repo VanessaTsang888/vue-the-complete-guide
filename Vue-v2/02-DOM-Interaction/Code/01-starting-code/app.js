@@ -4,6 +4,12 @@
 10. The deault event object:
 The clientX and the clientY are default properties name of the event object.
 
+11: event custom args:
+step is our own event custom arguement
+    increase: function (step, event) {
+      this.counter += step;
+    },
+
 
 */
 new Vue({
@@ -19,8 +25,8 @@ new Vue({
       this.title = "Hello";
       return this.title;
     },
-    increase: function () {
-      this.counter++;
+    increase: function (step, event) {
+      this.counter += step;
     },
     updateCoordinates: function (event) {
       this.x = event.clientX; // clientX is the default properties name of the event object.
