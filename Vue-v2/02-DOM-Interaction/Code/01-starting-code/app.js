@@ -11,5 +11,8 @@ new Vue({
       this.title = "Hello";
       return this.title;
     },
+    increase: function () {
+      this.counter++;
+    },
   },
 });

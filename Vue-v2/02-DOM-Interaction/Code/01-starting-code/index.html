@@ -12,4 +12,6 @@ Example, in JS code we try to change the value of the title property from Hello 
 <div id="app">
   <h1 v-once>{{ title }}</h1>
   <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+  <button v-on:click="increase">Click Me</button>
+  <p>{{ counter }}</p>
 </div>

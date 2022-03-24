@@ -88,3 +88,16 @@ DOM Interaction 07: only rendering once with v-once:
 
 v-once directive adding on an html element keeps the initial value (i.e. the value in the title property) and will not be updated if it changes later on.
 Example, if later in a method we change the title property from Hello World! to Hello, then this will NOT work as this directive keeps the initial value and not adjust once over-written. In our future app, we may need this behaviour and v-once makes it easy to stick to the initial value and not use any other value this property may take in a later point of time. See my 01 Starting Code files for my example of only rendering once with v-once directive.
+
+DOM Interaction 08 output raw html:
+
+Output a full link as HTML -> as text form.
+this default behaviour is great to prevent any Cross-side scripting attacks.
+By default Vue dont render html elements, it only renders text, most of the time that is what we want. So if you got some html content and you know the source where its coming from is safe or you did sanitise it before outputing it, then we may want to output the html code and not just a text. think of a blog post that has some editing inside of it, for this case we can loose the interpolation and use another directive which would be place on an element where is want to the html code. This direct is: v-html -> <p v-html></p>
+This allows us to pass the name of the property here which hold the html code or the value. Now we see the link. This directive tell Vue to actualy render the html code and not escape it but use this carefully as it do expose us to Cross-side attacks as if they is some content that you can't control what's placed inside of it. This is how to output html code through Vue.
+
+DOM Interaction 09: Event Directive:
+v-bind allows us to bind somthing in our Template to pass data to it, then
+v-on directive we listen to something to receive something to our Template, and we want to receive an Event. v-on take an argument and the name of the argument is the name of the Event we want to listen to, i.e. click.
+but can use any DOM Event for a button i.e. mouse-enter, mouse-leave, whatever DOM Events are on a button. Then pass an value the code we want to execute when button is clicked, i.e. a function -> increase.
+Now, when we click the button on the screen the counter will increase by each click.
